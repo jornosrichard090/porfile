@@ -1,9 +1,8 @@
 import Photo from "../assets/image/Photo.jpg";
-import Facebook_icon from "../assets/color_icon/facebook.png";
 import github_icon from "../assets/color_icon/github.png";
 import linkedin_icon from "../assets/color_icon/linkedin.png";
 import HackerRank_icon from "../assets/color_icon/hackerrank.png";
-import Instagram_icon from "../assets/color_icon/instagram.png";
+import twitter_icon from "../assets/color_icon/twitter.png";
 
 export default function Homepage() {
   return (
@@ -26,17 +25,19 @@ export default function Homepage() {
             AASHISH GULSHAN
           </h1>
           <h3 className="m-2 lg:text-xl md:text-lg text-base">
-            A <strong className="text-violet-500">Jr. Software Engineer </strong>
-            and a
+            A <strong className="text-violet-500">Software Engineer </strong>
+            Crafting Custom Solutions for the Digital Era !
+            <br />
             <strong className="text-fuchsia-500">
-               &nbsp;Full-Stack Web Developer
+              &nbsp; Tech Instructor &nbsp;
             </strong>
-            <br /> passionate about new technologies
+            Passionate About Emerging Technologies.
           </h3>
           <div className="max-w-[400px] my-10 md:grid grid-cols-2 items-center justify-center mx-auto">
             <div className="col-span-1 md:w-[70%] text-center md:text-left">
               <a
-                href="https://drive.google.com/file/d/10_KNoQ_B8k_-NeCwpAxmTNC8HYn97kXV/view?usp=sharing"
+                href="https://docs.google.com/document/d/1O4Szf_0eW6-6AoYCuP5zNGgNQ__UjLTScz5cDzm-BS0/export?format=pdf
+"
                 target={"_blank"}
               >
                 <button className="px-10 py-2 rounded text-wite shadow-lg text-white bg-gradient-to-r from-pink-600 to-blue-600 hover:from-blue-600 hover:to-pink-600 mb-4">
@@ -54,28 +55,14 @@ export default function Homepage() {
               </a>
               <a
                 className="hover:scale-125 duration-[500ms]"
-                href="https://www.hackerrank.com/aashishgulshan"
+                href="https://x.com/aashishgulshan"
                 target="_blank"
               >
-                <img src={HackerRank_icon} width={50} alt="" />
+                <img src={twitter_icon} width={50} alt="" />
               </a>
               <a
                 className="hover:scale-125 duration-[500ms]"
-                href="https://www.facebook.com/aashishgulshan"
-                target="_blank"
-              >
-                <img src={Facebook_icon} width={50} alt="" />
-              </a>
-              <a
-                className="hover:scale-125 duration-[500ms]"
-                href="https://www.instagram.com/aashish_gulshan/"
-                target="_blank"
-              >
-                <img src={Instagram_icon} width={50} alt="" />
-              </a>
-              <a
-                className="hover:scale-125 duration-[500ms]"
-                href="https://www.linkedin.com/in/aashish-gulshan/"
+                href="https://www.linkedin.com/in/aashishgulshan/"
                 target="_blank"
               >
                 <img src={linkedin_icon} width={50} alt="" />
