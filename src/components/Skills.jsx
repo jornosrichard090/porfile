@@ -1,49 +1,162 @@
-import React from 'react';
-import cp from "../assets/color_icon/c.png";
-import cpp from "../assets/color_icon/c++.png";
-import html from "../assets/color_icon/html.png";
-import css3 from "../assets/color_icon/css3.png";
-import hackerrank from "../assets/color_icon/hackerrank.png";
-import python from "../assets/color_icon/python.png";
-import vs_code from "../assets/color_icon/vs_code.png";
-import javascript from "../assets/color_icon/javascript.png";
-import tailwind_css from "../assets/color_icon/tailwind-css.png";
-import github from "../assets/color_icon/github.png";
-import mysql from "../assets/color_icon/mysql.png";
-import reactjs from "../assets/color_icon/react.png";
-import nodejs from "../assets/color_icon/node-js.png";
+import { motion } from "framer-motion";
+import { 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaJs, 
+  FaReact, 
+  FaNode, 
+  FaPython, 
+  FaGithub,
+  FaHackerrank,
+  FaPhp,
+  FaShopify
+} from "react-icons/fa";
+import { 
+  SiCplusplus, 
+  SiTailwindcss, 
+  SiMysql,
+  SiRemix,
+  SiGraphql,
+  SiPostgresql,
+  SiMongodb,
+  SiNetlify,
+  SiVercel,
+  SiGithubactions,
+  SiFirebase,
+  SiExpress,
+  SiShadcnui
+} from "react-icons/si";
+import { DiVisualstudio } from "react-icons/di";
 
 export default function Skills() {
-  const skillsData = [
-    { icon: cp, title: " C " },
-    { icon: cpp, title: "C++" },
-    { icon: python, title: "Python" },
-    { icon: hackerrank, title: "Hacker Rank" },
-    { icon: html, title: "HTML" },
-    { icon: css3, title: "CSS3" },
-    { icon: javascript, title: "JavaScript" },
-    { icon: tailwind_css, title: "Tailwind CSS" },
-    { icon: mysql, title: "MySQL" },
-    { icon: reactjs, title: "React JS" },
-    { icon: nodejs, title: "Node JS" },
-    { icon: github, title: "Github" },
-    { icon: vs_code, title: "VS-Code" },
+  const skillCategories = [
+    {
+      title: "Programming Languages",
+      skills: [
+        { icon: SiCplusplus, title: "C++", color: "#00599C" },
+        { icon: FaPython, title: "Python", color: "#3776AB" },
+        { icon: FaJs, title: "JavaScript", color: "#F7DF1E" },
+        { icon: FaPhp, title: "PHP", color: "#777BB4" }
+      ]
+    },
+    {
+      title: "Frontend Development",
+      skills: [
+        { icon: FaHtml5, title: "HTML", color: "#E34F26" },
+        { icon: FaCss3Alt, title: "CSS3", color: "#1572B6" },
+        { icon: FaReact, title: "React", color: "#61DAFB" },
+        { icon: SiTailwindcss, title: "Tailwind", color: "#06B6D4" },
+        { icon: SiRemix, title: "Remix", color: "#000000" },
+        { icon: SiShadcnui, title: "Shadcn/ui", color: "#000000" }
+      ]
+    },
+    {
+      title: "Backend & Database",
+      skills: [
+        { icon: FaNode, title: "Node.js", color: "#339933" },
+        { icon: SiExpress, title: "Express", color: "#000000" },
+        { icon: SiGraphql, title: "GraphQL", color: "#E10098" },
+        { icon: SiMysql, title: "MySQL", color: "#4479A1" },
+        { icon: SiPostgresql, title: "PostgreSQL", color: "#4169E1" },
+        { icon: SiMongodb, title: "MongoDB", color: "#47A248" }
+      ]
+    },
+    {
+      title: "Tools & Platforms",
+      skills: [
+        { icon: FaGithub, title: "GitHub", color: "#181717" },
+        { icon: SiGithubactions, title: "GitHub Actions", color: "#2088FF" },
+        { icon: DiVisualstudio, title: "VS Code", color: "#007ACC" },
+        { icon: FaHackerrank, title: "HackerRank", color: "#00EA64" }
+      ]
+    },
+    {
+      title: "Cloud & Deployment",
+      skills: [
+        { icon: SiNetlify, title: "Netlify", color: "#00C7B7" },
+        { icon: SiVercel, title: "Vercel", color: "#000000" },
+        { icon: SiFirebase, title: "Firebase", color: "#FFCA28" },
+        { icon: FaShopify, title: "Shopify", color: "#7AB55C" }
+      ]
+    }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <div className='max-w-6xl lg:mx-auto pt-5 rounded-xl bg-gray-200 mx-4' id='Skills'>
-      <h1 className="font-bold text-transparent text-3xl my-6 text-center italic bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">SKILLS</h1>
-           
-      <div className='container mx-auto bg-gray-200 border-t-4 rounded-b-xl border-white p-10'>
-        <ul className="max-w-5xl mx-auto grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6 lg:grid-cols-6 text-center items-center justify-center">
-          {skillsData.map(skill => (
-            <li key={skill.title} className='p-4 shadow-lg drop-shadow-2xl bg-gray-100 rounded-xl hover:scale-90 duration-500 '>
-              <img src={skill.icon} alt={skill.title} width={60} className='m-auto' />
-              <p className="mt-2 font-semibold text-black">{skill.title}</p>
-            </li>
+    <div className="min-h-screen bg-gray-900 py-24" id="Skills">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">
+            Technical Skills
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8 rounded-full"></div>
+          <p className="text-gray-300 max-w-2xl mx-auto mb-16">
+            A comprehensive overview of my technical expertise and the tools I use to build modern applications.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        >
+          {skillCategories.map((category) => (
+            <motion.div
+              key={category.title}
+              variants={itemVariants}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6"
+            >
+              <h3 className="text-xl font-semibold text-purple-400 mb-6">
+                {category.title}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                {category.skills.map((skill) => (
+                  <motion.div
+                    key={skill.title}
+                    whileHover={{ scale: 1.05 }}
+                    className="flex flex-col items-center gap-3 p-4 bg-gray-700/30 rounded-lg"
+                  >
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      <skill.icon className="w-8 h-8" style={{ color: skill.color }} />
+                    </div>
+                    <p className="text-sm font-medium text-gray-300">
+                      {skill.title}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           ))}
-        </ul>
+        </motion.div>
       </div>
     </div>
-  )
+  );
 }

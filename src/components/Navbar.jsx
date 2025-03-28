@@ -1,112 +1,112 @@
-import { React, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { HiMenu, HiX } from "react-icons/hi";
 
-export default function Test() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+
+  const navItems = [
+    { name: "Home", to: "Homepage" },
+    { name: "About", to: "About" },
+    { name: "Skills", to: "Skills" },
+    { name: "Work", to: "Projects" },
+    { name: "Contact", to: "Contact" }
+  ];
+
   return (
-    <div class="bg-gradient-to-r from-pink-600 to-blue-600 fixed w-full z-50">
-      <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <header class="flex items-center justify-between py-4 md:py-6">
-          <a
-            href="/"
-            class="inline-flex items-center gap-2.5 text-3xl font-bold text-white md:text-4xl"
-            aria-label="logo"
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="flex-shrink-0"
           >
-            <span className=" hidden lg:flex">Aashish Gulshan</span>
-            <span className="lg:hidden">AG</span>
-          </a>
+            <Link
+              to="Homepage"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent cursor-pointer"
+            >
+              <span className="hidden lg:inline">Aashish Gulshan</span>
+              <span className="lg:hidden">AG</span>
+            </Link>
+          </motion.div>
 
-          <nav class="hidden gap-10 lg:flex">
-            <a
-              href="#Homepage"
-              class="text-lg font-semibold text-white transition duration-300 hover:text-gray-100 hover:scale-125 active:text-indigo-700"
-            >
-              Home
-            </a>
-            <a
-              href="#About"
-              class="text-lg font-semibold text-white transition duration-300 hover:text-gray-100 hover:scale-125 active:text-indigo-700"
-            >
-              About
-            </a>
-            <a
-              href="#Skills"
-              class="text-lg font-semibold text-white transition duration-300 hover:text-gray-100 hover:scale-125 active:text-indigo-700"
-            >
-              Skills
-            </a>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:block">
+            <div className="flex space-x-8">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <Link
+                    to={item.to}
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors duration-200"
+                    activeClass="text-purple-400"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-            <a
-              href="#Projects"
-              class="text-lg font-semibold text-white transition duration-300 hover:text-gray-100 hover:scale-125 active:text-indigo-700"
-            >
-              Work
-            </a>
-            <a
-              href="#Contact"
-              class="text-lg font-semibold text-white transition duration-100 hover:text-gray-100 hover:scale-125 active:text-indigo-700"
-            >
-              Contact
-            </a>
-          </nav>
-
-          <button
-            onClick={toggleMenu}
-            type="button"
-            class="inline-flex items-center gap-2 rounded-lg shadow-lg px-2.5 py-2 text-sm font-semibold text-gray-100 ring-indigo-300 bg-gradient-to-r from-pink-600 to-blue-600 hover:from-blue-600 hover:to-pink-600 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-100"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-purple-400 focus:outline-none"
             >
               {isOpen ? (
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M19 18H5V16H19V18ZM19 13H5V11H19V13ZM19 6H5V4H19V6Z"
-                />
+                <HiX className="block h-6 w-6" />
               ) : (
-                <path
-                  fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                />
+                <HiMenu className="block h-6 w-6" />
               )}
-            </svg>
-            <span className="animate-bounce">.</span>
-          </button>
-        </header>
-        {isOpen && (
-          <div className="block lg:hidden font-semibold text-center text-white">
-            <a
-              href="#About"
-              className="block hover:text-gray-200 hover:underline underline-offset-4 animate-pulse mb-4"
-            >
-              About
-            </a>
-            <a
-              href="#Contact"
-              className="block hover:text-gray-200 hover:underline underline-offset-4 animate-pulse mb-6"
-            >
-              Contact Us
-            </a>
-
-            <a
-              href="https://drive.google.com/file/d/10_KNoQ_B8k_-NeCwpAxmTNC8HYn97kXV/view?usp=sharing"
-              target={"_blank"}
-            >
-              <button className="px-10 py-2 rounded-lg shadow-lg bg-gradient-to-r from-pink-600 to-blue-600 hover:from-blue-600 hover:to-pink-600 animate-bounce mb-4">
-              
-                Resume
-              </button>
-            </a>
+            </motion.button>
           </div>
-        )}
+        </div>
       </div>
-    </div>
+
+      {/* Mobile menu */}
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0 }}
+        transition={{ duration: 0.3 }}
+        className="lg:hidden overflow-hidden"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.to}
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="text-gray-300 hover:text-purple-400 block px-3 py-2 rounded-md text-base font-medium cursor-pointer transition-colors duration-200"
+              activeClass="text-purple-400"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+    </motion.nav>
   );
 }
