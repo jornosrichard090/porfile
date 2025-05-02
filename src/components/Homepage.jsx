@@ -1,5 +1,6 @@
 import Photo from "../assets/image/Photo.jpg";
 import { FaGithub, FaLinkedin, FaHackerrank, FaTwitter } from "react-icons/fa";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 
 export default function Homepage() {
   const socialLinks = [
@@ -10,7 +11,7 @@ export default function Homepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-28">
+    <div id="Homepage" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-28">
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
@@ -46,12 +47,15 @@ export default function Homepage() {
               >
                 Download Resume
               </a>
-              <a
-                href="#contact"
-                className="px-8 py-3 rounded-full border-2 border-purple-400 text-purple-400 font-medium hover:bg-purple-400/10 transition duration-300"
+              <Link
+                to="Contact" // Match the "to" value with the Contact section's ID
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="px-8 py-3 rounded-full border-2 border-purple-400 text-purple-400 font-medium hover:bg-purple-400/10 transition duration-300 cursor-pointer"
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
             
             <div className="flex gap-6 justify-center lg:justify-start">
