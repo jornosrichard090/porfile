@@ -110,6 +110,21 @@ ProjectCard.propTypes = {
 export default function Projects() {
   const projectsData = [
     {
+      image: "https://images.unsplash.com/photo-1592589185394-1849d2e75d75?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+      title: "Sampatti Satna – Real Estate & Retail Marketplace",
+      description: [
+        "Designed and developed a full-fledged web application for property listings using React.js, Firebase, and Tailwind CSS",
+        "Migrated from an Android-only platform to a responsive, SEO-friendly web interface with enhanced UX",
+        "Supports various property types including plots, houses, flats, shops, and rooms with dynamic filtering and search features",
+        "Integrated Firebase Firestore and Authentication for real-time data handling and user access control"
+      ],
+      githubLink: "https://github.com/aashishgulshan/sampatti-satna", 
+      liveLink: "https://sampatti-satna.web.app/",
+      date: "February 2025",
+      tags: ["React", "Firebase", "Tailwind CSS", "Firestore", "Authentication"],
+      featured: false
+    },
+    {
       image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       title: "Modern E-Commerce Platform",
       description: [
