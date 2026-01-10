@@ -5,25 +5,30 @@ export default function About() {
   const features = [
     {
       icon: <FaCode className="w-6 h-6" />,
-      title: "Software Engineer",
-      description: "Specializing in building scalable solutions at Zehntech"
+      title: "Full Stack Software Engineer",
+      description:
+        "Building scalable and frontend-heavy web applications using modern JavaScript technologies at Zehntech."
     },
     {
       icon: <FaLightbulb className="w-6 h-6" />,
       title: "Problem Solver",
-      description: "Passionate about turning complex challenges into elegant solutions"
+      description:
+        "Passionate about turning complex engineering challenges into clean, maintainable solutions."
     },
     {
       icon: <FaCoffee className="w-6 h-6" />,
-      title: "Team Player",
-      description: "Always eager to learn, collaborate, and share knowledge"
+      title: "Collaborative Team Player",
+      description:
+        "Always eager to learn, collaborate with cross-functional teams, and share technical knowledge."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 py-24" id="About">
+    <section className="min-h-screen bg-gray-900 py-24" id="About">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+
+        {/* SECTION HEADING */}
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -31,23 +36,33 @@ export default function About() {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">
-            About Me
+            About Aashish Gulshan
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8 rounded-full"></div>
-        </motion.div>
+        </motion.header>
 
-        <motion.div
+        {/* MAIN ABOUT CONTENT */}
+        <motion.article
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-12 max-w-3xl mx-auto text-center"
         >
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Hi, I&apos;m Aashish Gulshan, a Software Engineer from Nalanda, India. I&apos;m passionate about crafting elegant solutions to complex problems and staying at the forefront of technology. When I&apos;m not coding, you&apos;ll find me exploring new technologies, sharing ideas, or enjoying a cup of coffee while solving interesting challenges.
+          <p className="text-lg text-gray-300 leading-relaxed mb-4">
+            Hi, I’m <strong>Aashish Gulshan</strong>, a Full Stack Software Engineer based in
+            Nalanda, India, with over 2 years of experience building modern web
+            applications using React, Node.js, and TypeScript.
           </p>
-        </motion.div>
 
+          <p className="text-lg text-gray-300 leading-relaxed">
+            Aashish Gulshan currently works at Zehntech, where he focuses on
+            creating scalable, frontend-driven solutions and integrating APIs
+            for real-world production applications.
+          </p>
+        </motion.article>
+
+        {/* FEATURE CARDS */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +71,7 @@ export default function About() {
           className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3"
         >
           {features.map((feature, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -69,16 +84,19 @@ export default function About() {
                   {feature.icon}
                 </div>
               </div>
+
               <h3 className="mt-8 text-xl font-semibold text-white text-center mb-2">
                 {feature.title}
               </h3>
+
               <p className="text-gray-300 text-center">
                 {feature.description}
               </p>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,13 +110,19 @@ export default function About() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition duration-300"
           >
-            Let&apos;s Connect
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Connect with Aashish Gulshan
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
         </motion.div>
+
       </div>
-    </div>
+    </section>
   );
 }

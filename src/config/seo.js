@@ -1,17 +1,25 @@
 export const defaultSEO = {
-  title: 'Aashish Gulshan - Software Engineer & Tech Instructor',
-  description: 'Portfolio of Aashish Gulshan, a skilled software engineer and tech instructor specializing in web development, React.js, and modern technologies.',
+  title: "Aashish Gulshan | Full Stack Software Engineer (React, Node.js)",
+  description:
+    "Aashish Gulshan is a Full Stack Software Engineer with 2+ years of experience in React, Node.js, TypeScript, and scalable web applications.",
+
+  url: "https://aashishgulshan.netlify.app",
+
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://aashish-gulshan.netlify.app/',
-    site_name: 'Aashish Gulshan Portfolio',
+    type: "website",
+    locale: "en_US",
+    url: "https://aashishgulshan.netlify.app",
+    site_name: "Aashish Gulshan Portfolio",
+    title: "Aashish Gulshan | Full Stack Software Engineer",
+    description:
+      "Portfolio of Aashish Gulshan, a Full Stack Software Engineer specializing in React, Node.js, and modern web technologies."
   },
+
   twitter: {
-    handle: '@aashishgulshan',
-    site: '@aashishgulshan',
-    cardType: 'summary_large_image',
-  },
+    handle: "@aashishgulshan",
+    site: "@aashishgulshan",
+    cardType: "summary_large_image"
+  }
 };
 
 export const seoData = {

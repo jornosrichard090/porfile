@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aashishgulshan.netlify.app/sitemap.xml
