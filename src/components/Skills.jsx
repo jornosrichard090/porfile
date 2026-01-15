@@ -9,7 +9,9 @@ import {
   FaGithub,
   FaHackerrank,
   FaPhp,
-  FaShopify
+  FaShopify,
+  FaAws,
+  FaDocker
 } from "react-icons/fa";
 import { 
   SiCplusplus, 
@@ -24,7 +26,12 @@ import {
   SiGithubactions,
   SiFirebase,
   SiExpress,
-  SiShadcnui
+  SiShadcnui,
+  SiTypescript,
+  SiRedux,
+  SiZod,
+  SiRedis,
+  SiPrisma
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 
@@ -36,7 +43,8 @@ export default function Skills() {
         { icon: SiCplusplus, title: "C++", color: "#00599C" },
         { icon: FaPython, title: "Python", color: "#3776AB" },
         { icon: FaJs, title: "JavaScript", color: "#F7DF1E" },
-        { icon: FaPhp, title: "PHP", color: "#777BB4" }
+        { icon: FaPhp, title: "PHP", color: "#777BB4" },
+        { icon: SiTypescript, title: "TypeScript", color: "#3178C6" }
       ]
     },
     {
@@ -47,7 +55,9 @@ export default function Skills() {
         { icon: FaReact, title: "React", color: "#61DAFB" },
         { icon: SiTailwindcss, title: "Tailwind", color: "#06B6D4" },
         { icon: SiRemix, title: "Remix", color: "#000000" },
-        { icon: SiShadcnui, title: "Shadcn/ui", color: "#000000" }
+        { icon: SiShadcnui, title: "Shadcn/ui", color: "#000000" },
+        { icon: SiRedux, title: "Redux", color: "#764ABC" },
+        { icon: SiZod, title: "Zod", color: "#000000" }
       ]
     },
     {
@@ -58,7 +68,9 @@ export default function Skills() {
         { icon: SiGraphql, title: "GraphQL", color: "#E10098" },
         { icon: SiMysql, title: "MySQL", color: "#4479A1" },
         { icon: SiPostgresql, title: "PostgreSQL", color: "#4169E1" },
-        { icon: SiMongodb, title: "MongoDB", color: "#47A248" }
+        { icon: SiMongodb, title: "MongoDB", color: "#47A248" },
+        { icon: SiRedis, title: "Redis", color: "#DC382D" },
+        { icon: SiPrisma, title: "Prisma", color: "#0C344B"}
       ]
     },
     {
@@ -76,7 +88,9 @@ export default function Skills() {
         { icon: SiNetlify, title: "Netlify", color: "#00C7B7" },
         { icon: SiVercel, title: "Vercel", color: "#000000" },
         { icon: SiFirebase, title: "Firebase", color: "#FFCA28" },
-        { icon: FaShopify, title: "Shopify", color: "#7AB55C" }
+        { icon: FaShopify, title: "Shopify", color: "#7AB55C" },
+        { icon: FaAws, title: "AWS", color: "#FF9900" },
+        { icon: FaDocker, title: "Docker", color: "#2496ED" }
       ]
     }
   ];
