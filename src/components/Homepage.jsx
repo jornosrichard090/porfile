@@ -40,7 +40,7 @@ export default function Homepage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="https://docs.google.com/document/d/1O4Szf_0eW6-6AoYCuP5zNGgNQ__UjLTScz5cDzm-BS0/export?format=pdf"
+                href="https://drive.google.com/file/d/1p2MlMUcpWYvo_OGCIQqUlJJPKHRSz1ym"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition duration-300"
