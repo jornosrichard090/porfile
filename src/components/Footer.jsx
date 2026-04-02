@@ -5,17 +5,17 @@ import { SiGmail } from "react-icons/si";
 const socialLinks = [
   {
     icon: FaLinkedin,
-    href: "https://www.linkedin.com/in/aashishgulshan/",
+    href: "https://www.linkedin.com/in/jornosrichard/",
     label: "LinkedIn",
   },
   {
     icon: SiGmail,
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=aashishgulshan@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=jornosrichard090@gmail.com",
     label: "Gmail",
   },
   {
     icon: FaGithub,
-    href: "https://github.com/aashishgulshan",
+    href: "https://github.com/jornosrichard",
     label: "GitHub",
   },
 ];
@@ -58,9 +58,9 @@ export default function Footer() {
             <p className="text-gray-300 mb-2">
               Crafted with{" "}
               <FaHeart className="inline-block w-4 h-4 text-pink-500 animate-pulse" />{" "}
-              in India by{" "}
+              in Australia by{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent font-medium">
-                Aashish Gulshan
+                Jornos Richard
               </span>
             </p>
             <p className="text-gray-400 text-sm">

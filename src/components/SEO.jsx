@@ -32,7 +32,7 @@ const SEO = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Aashish Gulshan",
+          name: "Jornos Richard",
           url: SITE_URL,
           jobTitle: "Full Stack Software Engineer",
           sameAs: [

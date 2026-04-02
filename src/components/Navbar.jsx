@@ -36,8 +36,8 @@ export default function Navbar() {
               duration={500}
               className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent cursor-pointer"
             >
-              <span className="hidden lg:inline">Aashish Gulshan</span>
-              <span className="lg:hidden">AG</span>
+              <span className="hidden lg:inline">Jornos Richard</span>
+              <span className="lg:hidden">JR</span>
             </Link>
           </motion.div>
 

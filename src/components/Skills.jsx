@@ -31,7 +31,12 @@ import {
   SiRedux,
   SiZod,
   SiRedis,
-  SiPrisma
+  SiPrisma,
+  SiTensorflow,
+  SiPytorch,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 
@@ -71,6 +76,17 @@ export default function Skills() {
         { icon: SiMongodb, title: "MongoDB", color: "#47A248" },
         { icon: SiRedis, title: "Redis", color: "#DC382D" },
         { icon: SiPrisma, title: "Prisma", color: "#0C344B"}
+      ]
+    },
+    {
+      title: "AI & Machine Learning",
+      skills: [
+        { icon: SiTensorflow, title: "TensorFlow", color: "#FF6F20" },
+        { icon: SiPytorch, title: "PyTorch", color: "#EE4C2C" },
+        { icon: SiScikitlearn, title: "Scikit-learn", color: "#F7931E" },
+        { icon: SiPandas, title: "Pandas", color: "#150458" },
+        { icon: SiNumpy, title: "NumPy", color: "#013243" },
+        { icon: FaPython, title: "Python ML", color: "#3776AB" }
       ]
     },
     {

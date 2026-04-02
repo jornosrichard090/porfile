@@ -5,21 +5,21 @@ export default function About() {
   const features = [
     {
       icon: <FaCode className="w-6 h-6" />,
-      title: "Full Stack Software Engineer",
+      title: "Full-Stack Web & Mobile Architect",
       description:
-        "Building scalable and frontend-heavy web applications using modern JavaScript technologies at Zehntech."
+        "Designing and developing scalable enterprise applications spanning full-stack web platforms, mobile solutions, and cloud infrastructure with modern frameworks and technologies."
     },
     {
       icon: <FaLightbulb className="w-6 h-6" />,
-      title: "Problem Solver",
+      title: "AI & Automation Specialist",
       description:
-        "Passionate about turning complex engineering challenges into clean, maintainable solutions."
+        "Leveraging machine learning, artificial intelligence, and automation technologies to solve complex business challenges and drive operational efficiency."
     },
     {
       icon: <FaCoffee className="w-6 h-6" />,
-      title: "Collaborative Team Player",
+      title: "Strategic Technology Leader",
       description:
-        "Always eager to learn, collaborate with cross-functional teams, and share technical knowledge."
+        "Delivering high-impact solutions through collaborative innovation, technical expertise, and a commitment to excellence in enterprise software development."
     }
   ];
 
@@ -36,7 +36,7 @@ export default function About() {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">
-            About Aashish Gulshan
+            About Jornos Richard
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8 rounded-full"></div>
         </motion.header>
@@ -50,15 +50,11 @@ export default function About() {
           className="mt-12 max-w-3xl mx-auto text-center"
         >
           <p className="text-lg text-gray-300 leading-relaxed mb-4">
-            Hi, I’m <strong>Aashish Gulshan</strong>, a Full Stack Software Engineer based in
-            Nalanda, India, with over 2 years of experience building modern web
-            applications using React, Node.js, and TypeScript.
+            Hello, I'm <strong>Jornos Richard</strong>, a Full-Stack Web, Mobile & AI Development specialist based in Melbourne, Australia. With over 6 years of professional experience, I architect scalable solutions across web, mobile, and AI-driven automation technologies.
           </p>
 
           <p className="text-lg text-gray-300 leading-relaxed">
-            Aashish Gulshan currently works at Zehntech, where he focuses on
-            creating scalable, frontend-driven solutions and integrating APIs
-            for real-world production applications.
+            I specialize in designing and implementing robust, enterprise-grade applications leveraging modern frameworks such as React, Node.js, TypeScript, and machine learning technologies. My expertise extends to AI automation, cloud infrastructure, and delivering high-performance solutions that drive measurable business impact for organizations worldwide.
           </p>
         </motion.article>
 
@@ -96,31 +92,7 @@ export default function About() {
           ))}
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <a
-            href="https://www.linkedin.com/in/aashishgulshan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition duration-300"
-          >
-            Connect with Aashish Gulshan
-            <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </motion.div>
+
 
       </div>
     </section>

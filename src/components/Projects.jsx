@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaCalendar } from "react-icons/fa";
+import { FaExternalLinkAlt, FaCalendar } from "react-icons/fa";
 import PropTypes from "prop-types";
 import SEO from './SEO';
 import { seoData } from '../config/seo';
 
-const ProjectCard = ({ image, title, description, githubLink, liveLink, date, tags, featured }) => (
+const ProjectCard = ({ image, title, description, liveLink, date, tags, featured }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -70,16 +70,7 @@ const ProjectCard = ({ image, title, description, githubLink, liveLink, date, ta
 
         {/* Actions */}
         <div className="flex flex-wrap gap-4">
-          <a
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-lg text-sm font-medium transition-all duration-300 hover:translate-y-[-2px]"
-          >
-            <FaGithub className="w-4 h-4" />
-            View Code
-          </a>
-          {liveLink && liveLink !== githubLink && (
+          {liveLink && (
             <a
               href={liveLink}
               target="_blank"
@@ -100,7 +91,6 @@ ProjectCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
-  githubLink: PropTypes.string.isRequired,
   liveLink: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -110,93 +100,143 @@ ProjectCard.propTypes = {
 export default function Projects() {
   const projectsData = [
     {
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      title: "Panorama Education",
+      description: [
+        "Leading AI-powered platform for student insight and action trusted by 2000+ districts",
+        "Supports 15 million students with data-driven decision making and student success tools",
+        "Provides comprehensive solutions including Panorama Solara, Student Success, Surveys, and Pathways",
+        "Achieved 8% reduction in student absences with proven impact on educational outcomes"
+      ],
+      liveLink: "https://www.panoramaed.com/",
+      date: "2025",
+      tags: ["AI", "EdTech", "Data Analytics", "Platform"],
+      featured: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      title: "Mutual Vision",
+      description: [
+        "Modern cloud-native core banking platform built for mutuals by technology experts",
+        "Provides MV Hub, MV Engage, MV Shield, and MV Originate solutions for financial institutions",
+        "Enables Building Societies and mutuals to compete, thrive, and stay true to their mission",
+        "Trusted by growing network of institutions with secure, scalable infrastructure"
+      ],
+      liveLink: "https://mutualvision.co.uk/",
+      date: "2025",
+      tags: ["Banking", "FinTech", "Cloud", "B2B"],
+      featured: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      title: "AssistRx",
+      description: [
+        "Healthcare platform combining technology and talent to improve patient access and adherence",
+        "Serves 100M+ annual transactions supporting patients, healthcare providers, and life sciences",
+        "Provides electronic prior authorization with decisions returned in minutes",
+        "Improves speed to therapy with comprehensive patient coverage data"
+      ],
+      liveLink: "https://www.assistrx.com/",
+      date: "2025",
+      tags: ["Healthcare", "HealthTech", "Patient Support", "B2B"],
+      featured: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      title: "Inspiren",
+      description: [
+        "Innovative platform designed to inspire and empower organizations worldwide",
+        "Delivers cutting-edge solutions for modern business challenges and digital transformation",
+        "Focuses on creating transformative experiences for users and clients",
+        "Combines technology expertise with strategic insights for sustainable growth"
+      ],
+      liveLink: "https://www.inspiren.com/",
+      date: "2025",
+      tags: ["Innovation", "SaaS", "Enterprise", "Platform"],
+      featured: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      title: "Jersey Watch",
+      description: [
+        "All-in-one sports management platform trusted by 2,800+ sports organizations worldwide",
+        "Provides website builder, online registration, payment collection, and scheduling features",
+        "Enables communication tools for teams, divisions, and entire organizations",
+        "Includes background checks, donation collection, and comprehensive youth sports support"
+      ],
+      liveLink: "https://www.jerseywatch.com/",
+      date: "2025",
+      tags: ["Sports Tech", "SaaS", "Management Platform", "B2B"],
+      featured: false
+    },
+    {
       image: "https://images.unsplash.com/photo-1592589185394-1849d2e75d75?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
       title: "Sampatti Satna – Real Estate & Retail Marketplace",
       description: [
-        "Designed and developed a full-fledged web application for property listings using React.js, Firebase, and Tailwind CSS",
-        "Migrated from an Android-only platform to a responsive, SEO-friendly web interface with enhanced UX",
-        "Supports various property types including plots, houses, flats, shops, and rooms with dynamic filtering and search features",
-        "Integrated Firebase Firestore and Authentication for real-time data handling and user access control"
+        "Full-fledged web application for property listings using React.js, Firebase, and Tailwind CSS",
+        "Migrated from Android-only platform to responsive, SEO-friendly web interface",
+        "Supports plots, houses, flats, shops, and rooms with dynamic filtering and search",
+        "Integrated Firebase Firestore and Authentication for real-time data handling"
       ],
-      githubLink: "https://github.com/aashishgulshan/sampatti-satna", 
       liveLink: "https://sampatti-satna.web.app/",
       date: "February 2025",
-      tags: ["React", "Firebase", "Tailwind CSS", "Firestore", "Authentication"],
+      tags: ["React", "Firebase", "Tailwind CSS", "Firestore"],
       featured: false
     },
     {
       image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       title: "Modern E-Commerce Platform",
       description: [
-        "Built a full-featured e-commerce platform using React.js, Redux for state management, and Tailwind CSS for responsive design",
-        "Implemented secure payment integration, real-time inventory tracking, and user authentication with JWT",
-        "Achieved 40% faster page load times through code splitting and lazy loading techniques",
-        "Integrated RESTful APIs for product management and order processing with 99.9% uptime"
+        "Full-featured e-commerce platform using React.js, Redux, and Tailwind CSS",
+        "Implemented secure payment integration, real-time inventory tracking, and JWT authentication",
+        "Achieved 40% faster page load times through code splitting and lazy loading",
+        "Integrated RESTful APIs with 99.9% uptime for product management and orders"
       ],
-      githubLink: "https://github.com/aashishgulshan/e-commerce-website",
       liveLink: "https://rashail.vercel.app",
       date: "March 2024",
-      tags: ["React", "Redux", "Tailwind CSS", "RESTful API", "JWT", "Vercel"],
+      tags: ["React", "Redux", "Tailwind", "API", "Vercel"],
       featured: false
     },
     {
       image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       title: "Real-time News Aggregator",
       description: [
-        "Developed a dynamic news platform that aggregates and displays real-time news from multiple sources",
-        "Implemented auto-refresh functionality and category-based filtering for enhanced user experience",
+        "Dynamic news platform that aggregates and displays real-time news from multiple sources",
+        "Implemented auto-refresh functionality and category-based filtering for UX",
         "Optimized performance with React Query for efficient data caching and state management",
-        "Achieved 95% Lighthouse performance score through image optimization and lazy loading"
+        "Achieved 95% Lighthouse performance score through optimization and lazy loading"
       ],
-      githubLink: "https://github.com/aashishgulshan/NewsVia-API",
       liveLink: "https://news-via-api.vercel.app/",
       date: "February 2024",
-      tags: ["React", "React Query", "News API", "Performance Optimization", "Vercel"],
-      featured: false
-    },
-    {
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      title: "Personal Portfolio Website",
-      description: [
-        "Designed and developed a modern portfolio website using React.js and Tailwind CSS",
-        "Implemented smooth animations and transitions using Framer Motion for enhanced UX",
-        "Achieved 100% responsive design across all devices with mobile-first approach",
-        "Optimized for SEO with meta tags, semantic HTML, and structured data"
-      ],
-      githubLink: "https://github.com/aashishgulshan/portfolio",
-      liveLink: "https://aashish-gulshan.netlify.app/",
-      date: "March 2024",
-      tags: ["React", "Tailwind CSS", "Framer Motion", "SEO", "Netlify"],
+      tags: ["React", "React Query", "News API", "Performance", "Vercel"],
       featured: false
     },
     {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       title: "Secure Electronic Voting System",
       description: [
-        "Engineered a secure electronic voting system using Python and MySQL with role-based access control",
+        "Secure electronic voting system using Python and MySQL with role-based access control",
         "Implemented robust voter authentication and data encryption for maximum security",
-        "Developed an intuitive admin dashboard for real-time election monitoring and result generation",
-        "Successfully tested with 10,000+ simulated voters with zero security vulnerabilities"
+        "Developed intuitive admin dashboard for real-time election monitoring and results",
+        "Successfully tested with 10,000+ simulated voters with zero vulnerabilities"
       ],
-      githubLink: "https://github.com/aashishgulshan/EVM_Project_Python",
       liveLink: "https://github.com/aashishgulshan/EVM_Project_Python",
       date: "December 2023",
-      tags: ["Python", "MySQL", "Security", "Authentication", "Desktop App"],
+      tags: ["Python", "MySQL", "Security", "Authentication"],
       featured: false
     },
     {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       title: "Advanced Banking Management System",
       description: [
-        "Developed a comprehensive banking system in C++ with support for multiple account types",
+        "Comprehensive banking system in C++ with support for multiple account types",
         "Implemented secure transaction processing and account management features",
-        "Created an efficient file-based database system for persistent data storage",
-        "Integrated detailed transaction history and automated interest calculation"
+        "Created efficient file-based database system for persistent data storage",
+        "Integrated transaction history and automated interest calculation"
       ],
-      githubLink: "https://github.com/aashishgulshan/C-With-class-Programming/blob/main/SBI.CPP",
       liveLink: "https://github.com/aashishgulshan/C-With-class-Programming/blob/main/SBI.CPP",
       date: "November 2023",
-      tags: ["C++", "File Handling", "OOP", "Data Structures", "Console App"],
+      tags: ["C++", "File Handling", "OOP", "Data Structures"],
       featured: false
     }
   ];
@@ -212,7 +252,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-24" id="Projects">
+    <div className="min-h-screen bg-gray-900 py-16 md:py-24" id="Projects">
       <SEO 
         title={seoData.projects.title}
         description={seoData.projects.description}
@@ -224,14 +264,14 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-4">
-            Featured Projects & Experience
+            Projects & Experience
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            A curated collection of my professional work and personal projects, showcasing expertise in full-stack development, system design, and modern web technologies.
+            Featured client projects and personal work showcasing expertise in full-stack development, innovative platforms, and modern web technologies.
           </p>
         </motion.div>
 
@@ -240,7 +280,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-10"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 xl:gap-10"
         >
           {projectsData.map((project) => (
             <ProjectCard key={project.title} {...project} />
